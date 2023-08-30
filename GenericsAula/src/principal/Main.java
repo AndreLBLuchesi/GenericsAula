@@ -16,7 +16,8 @@ public class Main {
         MinhaLista<String> lista1 = new MinhaLista<>();
         MinhaLista<Integer> lista2 = new MinhaLista<>();
         MinhaLista<Aluno> lista3 = new MinhaLista<>();
-        
+        MinhaLista<Double> lista4 = new MinhaLista<>();        
+
         lista1.adicionar("Aula POO");
         lista1.adicionar("TADS");
         
@@ -26,18 +27,18 @@ public class Main {
         lista3.adicionar(new Aluno("Pedrinho", "123"));
         lista3.adicionar(new Aluno("Aninha", "456"));
         
-        for (int i = 0; i < lista1.getQuantidade(); i++) {
-            System.out.println(lista1.buscarElemento(i));   
-        }
-        System.out.println("");
-        
-        for (int i = 0; i < lista2.getQuantidade(); i++) {
-            System.out.println(lista2.buscarElemento(i));   
-        }
-        System.out.println("");
-        
-        for (int i = 0; i < lista3.getQuantidade(); i++) {
-            System.out.println(lista3.buscarElemento(i));   
+        lista4.adicionar(5.5);
+        lista4.adicionar(8.2);
+
+        exibirLista(lista1);
+        exibirLista(lista2);
+        exibirLista(lista3);
+        exibirLista(lista4);  
+    }
+    
+    public static <T> void exibirLista(MinhaLista<? extends T> lista){
+        for (int i = 0; i < lista.getQuantidade(); i++) {
+            System.out.println(lista.buscarElemento(i));   
         }
     }
 }
